@@ -1,0 +1,93 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[spanish, es-noindentfirst]{babel}
+\selectlanguage{spanish}
+\usepackage[utf8]{inputenc} 
+% ajusta tus márgenes de página aquí
+\usepackage[top=0.70in, bottom=0.70in, left=0.8in,right=0.80in]{geometry} 
+% configurando la alineación de la página con este paquete
+\usepackage[pdftex]{graphicx} % para incrustar imágenes
+\usepackage[%dvips, % commented for pdflatex
+bookmarks,  colorlinks=false]{hyperref}% para crear enlaces en la versión en pdf y otros atributos pdf adicionales, sin efecto en el documento impreso
+\usepackage[table]{xcolor}
+\hypersetup{%
+    pdfborder = {0 0 0}
+}
+\usepackage[final]{pdfpages} % para incrustar otro pdf, eliminar si no es necesario
+\usepackage{float} %used for figure placement with H as a parameter
+\usepackage{hyperref}
+\usepackage{pslatex} % for times new roman, old package, but works
+\usepackage{array} % for making text bold in table
+\usepackage{setspace}
+\usepackage{float}
+\usepackage{enumerate}
+\usepackage{longtable}
+
+\usepackage[font=small,labelfont=bf]{caption}
+\def\figurename{\textbf{Figure }}
+
+\usepackage{listings}
+
+
+
+
+
+% Para el encabezado y el pie de página
+\usepackage{fancyhdr}
+\fancypagestyle{plain}{%
+\fancyfoot[L]{\emph{Nombre de nuestra empresa}}% excepto el centro
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+}
+
+\pagestyle{fancy}
+
+\rhead{\emph{Plan para la dirección del proyecto}}
+
+\fancyfoot[LO,LE]{\emph{Nombre de nuestra empresa}}
+\cfoot{}
+\fancyfoot[RO, RE]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+%Borde de página
+\usepackage{pgf}
+\usepackage{pgfpages}
+
+\begin{document}
+\renewcommand\bibname{References}
+\lhead{ }
+
+\input{project/portada.tex}
+\newpage
+
+%TABLE OF CONTENTS AND LIST OF FIGURES ARE AUTOMATICALLY ADDED BY FOLLOWING COMMANDS
+%ADD FIGURE OF TABLES IF YOU NEED TO, CHECK DOCUMENTATION
+\pagenumbering{roman} %numbering before main content starts
+
+
+%To reset the Header & Footer for TOC and LOF
+\pagestyle{empty}
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\tableofcontents %  agregar el índice
+
+\addtocontents{lof}{\protect\thispagestyle{empty}}
+\listoffigures % agregar lista de imágenes
+\cleardoublepage
+
+%And reset back the settings we choose for Header and Footer
+\pagestyle{fancy}
+
+\newpage
+\pagenumbering{arabic} %reset numbering to normal for the main content
+
+\input{project/gestionAlcance.tex} 
+\input{project/gestionTiempo.tex} 
+%\input{project/gestionInteresados.tex}
+%\input{project/gestionCostos.tex}
+%\input{project/gestionAdquisiones.tex}
+%\input{project/ref.tex} 
+
+
+\end{document}
