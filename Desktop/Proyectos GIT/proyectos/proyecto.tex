@@ -2,6 +2,7 @@
 \usepackage[spanish, es-noindentfirst]{babel}
 \selectlanguage{spanish}
 \usepackage[utf8]{inputenc} 
+\usepackage{animate}
 % ajusta tus márgenes de página aquí
 \usepackage[top=0.70in, bottom=0.70in, left=0.8in,right=0.80in]{geometry} 
 % configurando la alineación de la página con este paquete
@@ -25,16 +26,11 @@ bookmarks,  colorlinks=false]{hyperref}% para crear enlaces en la versión en pd
 \usepackage[font=small,labelfont=bf]{caption}
 \def\figurename{\textbf{Figure }}
 
-\usepackage{listings}
-
-
-
-
-
+\usepackage{listings}% esto es por si se utiliza código (java, python, etc)
 % Para el encabezado y el pie de página
 \usepackage{fancyhdr}
 \fancypagestyle{plain}{%
-\fancyfoot[L]{\emph{Nombre de nuestra empresa}}% excepto el centro
+\fancyfoot[L]{\emph{Equipo1}}% excepto el centro
 \fancyfoot[R]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
@@ -44,7 +40,7 @@ bookmarks,  colorlinks=false]{hyperref}% para crear enlaces en la versión en pd
 
 \rhead{\emph{Plan para la dirección del proyecto}}
 
-\fancyfoot[LO,LE]{\emph{Nombre de nuestra empresa}}
+\fancyfoot[LO,LE]{\emph{Equipo1}}
 \cfoot{}
 \fancyfoot[RO, RE]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -74,6 +70,7 @@ bookmarks,  colorlinks=false]{hyperref}% para crear enlaces en la versión en pd
 
 \addtocontents{lof}{\protect\thispagestyle{empty}}
 \listoffigures % agregar lista de imágenes
+\listoftables
 \cleardoublepage
 
 %And reset back the settings we choose for Header and Footer
@@ -84,7 +81,7 @@ bookmarks,  colorlinks=false]{hyperref}% para crear enlaces en la versión en pd
 
 \input{project/gestionAlcance.tex} 
 \input{project/gestionTiempo.tex} 
-%\input{project/gestionInteresados.tex}
+\input{project/gestionInteresados.tex}
 %\input{project/gestionCostos.tex}
 %\input{project/gestionAdquisiones.tex}
 %\input{project/ref.tex} 
